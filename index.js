@@ -139,10 +139,7 @@ login({ appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8')) }, (err, 
                 res = 'Cả thế giới đang chỉ tay vào bạn'
                 api.sendMessage({ body: res, attachment: fs.createReadStream(`./chitay.png`) }, id)
             }
-            if (text === 'paimon') {
-                res = 'Con Kẹc'
-                api.sendMessage({ body: res, attachment: fs.createReadStream(`./paimon.png`) }, id)
-            }
+    
             if (text === 'help' || text === 'Help') {
                 res = `Hiện tại có những lệnh sau 
                 \n${pre}help : Show all lệnh hoặc tìm hiểu cách dùng 1 lệnh nào đó
@@ -154,7 +151,7 @@ login({ appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8')) }, (err, 
                 \n${pre}botngu : Bot ngu
                 \n${pre}donate : Liên hệ Tuấn đz để donate:)
                 \n${pre}wiki : Lấy thông tin Wikipedia  
-                \n${pre}faruzan : Vojw của Tuấn <(")
+                
                 \n${pre}renamebox : renamebox + tên (đổi tên nhóm)
                 \n${pre}security : Bảo mật
                 \n${pre}tuandz : Anh Tuấn của tao đâu
@@ -174,7 +171,7 @@ login({ appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8')) }, (err, 
                 console.log(`${time} Bot -> ${id} :`, res)
             }
             if (text === 'donate' || text === 'Donate') {
-                res = 'Một ngày em bú 12 viên Diamonds . Vì thế thằng nào có tiềnn , nạp tiền vào donate cho tao . Ítt thì 1 thẻ tháng , nhiềuu thì 1 Nhật kí hành trình . Nghe rõ chưa! <(")'
+                res = 'Một ngày em bú 12 viên Diamonds . Vì thế thằng nào có tiềnn , nạp tiền vào donate cho tao . Ítt thì 1 thẻ tháng , nhiềuu thì 1 thẻ quý . Nghe rõ chưa! <(")'
                 api.sendMessage(res, id)
                 console.log(`${time} Bot -> ${id} :`, res)
             }
@@ -198,9 +195,7 @@ login({ appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8')) }, (err, 
                 if (text.split(' ')[0] === 'wiki') { messWiki(text.split('wiki ')[1]) }
                 if (text.split(' ')[0] === 'Wiki') { messWiki(text.split('Wiki ')[1]) }
             }
-            if (text === 'faruzan' || text === 'Faruzan') {
-                api.sendMessage({ body: `Vojw của @Nguyễn Anh Tuấn <(")`, mentions: [{ tag: '@Nguyễn Anh Tuấn', id: '100042926131717' }], attachment: fs.createReadStream(__dirname + '/Picture/faruzan.jpg') }, id)
-            }
+            
             if (text.split(' ')[0] === 'Renamebox' || text.split(' ')[0] === 'renamebox' || text.split(' ')[0] === 'Rnbox' || text.split(' ')[0] === 'rnbox') {
                 mean = text.split(' ')[0]
                 title = text.split(`${mean} `)[1]
@@ -208,12 +203,12 @@ login({ appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8')) }, (err, 
                 api.sendMessage(`Đã đổi tên Box thành ${title}`, id)
             }
             if (text === 'About Tuấn') {
-                res = `Tuấn tên đầy đủ là Nguyễn Anh Tuấn . Thường được mọi người gọi là Tuấn Hacker lỏd hoặc trick lỏ . Đầu tháng 05/2023 thì Tuấn bắt đầu học Node JavaScript , 2 ngày sau đó thì Tuấn đã làm cái Project ChatBot lỏ  này. Với kinh nghiệm thành thạo trên dưới 7 ngôn ngữ , Cụ thể là JavaScript , Python , C++ , PHP thì Tuấn đã làm ra những tool lỏ đi lùa gà bán cho những thằng ngu <(") .Số tiền kiếm được thì Tuấn đã nạp game Gacha đỏ đen <(") . Những tool lỏ đã được Tuấn Up lên https://github.com/svnmarco . Fact : 'người ngh.iện thường không thể làm chủ hành động của mình' . To be continue...`
+                res = `Tuấn tên đầy đủ là Nguyễn Anh Tuấn . Thường được mọi người gọi là Tuấn Hacker lỏd hoặc trick lỏ . Đầu tháng 05/2023 thì Tuấn bắt đầu học Node JavaScript , 2 ngày sau đó thì Tuấn đã làm cái Project ChatBot lỏ  này. Với kinh nghiệm thành thạo trên dưới 7 ngôn ngữ , Cụ thể là JavaScript , Python , C++ , PHP thì Tuấn đã làm ra những tool lỏ đi lùa gà bán cho những thằng ngu <(") .Số tiền kiếm được thì Tuấn đã nạp game Gacha đỏ đen <(") . Những tool lỏ đã được Tuấn Up lên https://github.com/svnmarco  . To be continue...`
                 api.sendMessage(res, id)
                 console.log(`${time} Bot -> ${id} :`, res)
             }
             if (text === 'About Trâm') {
-                res = `1 từ thôi 'non' . Bị lừa mấy lần cũng không hết non . '1 lần nạp 50k , bao nhiêu lần thì không nhớ' . Mất mấy trăm để lấy FC , tham skin liên quân xong mất nick mất <(")`
+                res = `1 từ thôi 'non' . Bị lừa mấy lần cũng không hết non . '1 lần nạp 50k , bao nhiêu lần thì không nhớ' . Mất mấy trăm để lấy FC , tham skin liên quân xong mất nick <(")`
                 api.sendMessage(res, id)
                 console.log(`${time} Bot -> ${id} :`, res)
             }
@@ -249,10 +244,7 @@ login({ appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8')) }, (err, 
                 api.sendMessage(res, id)
                 console.log(`${time} Bot -> ${id} :`, res)
             }
-            if (text === 'Furina' || text === 'furina') {
-                res = 'Furina'
-                api.sendMessage({ body: res, attachment: fs.createReadStream(`./Picture/furina.jpg`) }, id)
-            }
+            
             if (text === 'TKB' || text === 'Tkb' || text === 'tkb') {
                 res = `Thứ 2 : Lý Sinh Hóa Sử\nThứ 3 : Toán Toán Anh Thể\nThứ 4 : Lý Thể Sinh Anh\nThứ 5 : Toán Toán Anh Hóa Lý\nThứ 6 : Văn Sử Tin GDQP\nThứ 7 : Văn Văn Hóa Tin`
                 api.sendMessage(res, id)
